@@ -1,5 +1,6 @@
 # DATA CLEANING: FIFA 2021 
 
+![]()
 ## Background
 
 I recently participated in a data cleaning challenge organized in the data-tech space, the project was aimed at transforming FIFA 2021 messy data into a clean and 
