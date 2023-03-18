@@ -25,10 +25,6 @@ the data is accurate,complete,valid and consistent before the data analysis phas
   After importing the data to power query editor in excel, I changed the file origin to UTF-8 encoding,this automaticaly removed the special characters and replaced 
   it with the appropriate letter.
   
-  | First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
   
   ## Name,Long_name and ID
   The dataset does not consist of duplicate data, so the next line of action was to check the data types of each column. Begining with the ID,Name and Long_name 
