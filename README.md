@@ -151,9 +151,9 @@ After this i changed the data type to a currency type.
   This column contained data points that had the letter 'K' which represents thousand I used this M language formula to normalise the data and changed the data 
   type to a numeric format.
   
-   ```(if Text.Contains([Hits],"K") then
+   (if Text.Contains([Hits],"K") then
       Number.From( Text.BeforeDelimiter([Hits],"K"))*1000 else
-      Number.From( [Hits])```
+      Number.From( [Hits])
       
  | First Header  | Second Header |
 | ------------- | ------------- |
@@ -161,11 +161,10 @@ After this i changed the data type to a currency type.
 | Content Cell  | Content Cell  |
      
  
- CONCLUSION
-    The FIFA 2021 dataset was very messy, the data cleaning process was daunting intially but it eventually became interesting.
-    Joining the data cleaning challenge was a nice learning curve for me, I am looking foward to the data analysis and visualization part of this project.
-    Thank you, your feedback and recommendations are welcomed. Feel free to connect with me on [Linkedin](www.linkedin.com/in/
-ogunjimi-bukola) and [Twitter]().
+ ## CONCLUSION
+ 
+ The FIFA 2021 raw dataset was very messy, the data cleaning process was daunting intially but it eventually became interesting.The dataset has be normalised and transformed and it is ready for analysis. Joining the data cleaning challenge was a nice learning curve for me, I am looking foward to the data analysis and visualization part of this project.
+ Thank you, your feedback and recommendations are welcomed. Feel free to connect with me on [Linkedin](www.linkedin.com/in/ogunjimi-bukola) and [Twitter](https://twitter.com/Oluwabukola0).
 
 
 
