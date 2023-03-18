@@ -25,7 +25,7 @@ the data is accurate,complete,valid and consistent before the data analysis phas
   After importing the data to power query editor in excel, I changed the file origin to UTF-8 encoding,this automaticaly removed the special characters and replaced 
   it with the appropriate letter.
   
-   |Before                      | After                           |                                 
+   |Special character Before  | Special character After                           |                                 
   ---------------------------:|:-------------------------------------
   ![](Specialcharactersbefore.png)| ![](Specialcharacterafter.png)                                      
   
@@ -42,9 +42,9 @@ the data is accurate,complete,valid and consistent before the data analysis phas
   The ova(overall analysis rating),POT(potential rating) and BOV(best overall) colunms contained numeric values and had a wrong data type, these columns ideally
   should have a percentage data type and be written in a percentage according to the data dictionary. To transform these colunmns i divided each colunmn by 100 and changed the data type to percentage.
   
-  |Before                      | After                           |                                 
-  ---------------------------:|:-------------------------------------
-  ![]()| ![]()                                      
+  |OVA & POT Before     | OVA & POT After                |                                 
+  ---------------------:|:----------------------
+  ![](Ova&cobefore.png)| ![](Ova&coafter.png)                                      
   
 
   ## Contract
@@ -68,11 +68,10 @@ the data is accurate,complete,valid and consistent before the data analysis phas
   #### Duration
   To create this column I used a custom column using this formula '[contract end]-[contract start]' the result of this arithemetic operation populates a new column which I named 
   'Duration',it contained some errors which I replaced  with 'null' this is because the errors are as a result of the rows containing 'free and loan date' which can not be subtracted, I then changed data type to the correct format. The duration contains how long a players contract lasted for or should last as the case maybe.
-  
-  | First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+    
+  |Contract Before       | Contract After                |                                 
+  ----------------------:|:----------------------
+  ![](Contractbefore.png)| ![](Contract&coafter.png)  
   
   
   ## Height and Weight
@@ -96,23 +95,26 @@ the data is accurate,complete,valid and consistent before the data analysis phas
    Step 4: I changed the null values in height to zero(0) after which I created a new column by creating a custom formula '[height 2] + [multplication]' which 
    is the column that was created in step 3, I named this column addition. I then proceeded to create a new column with a custom column using this formula 
    '[addition] / [convert to cm]' this column provided the final result which is each players height in (CM). To keep the data clean I deleted the 6 aforementiond coumns in the preceeding steps leaving only the (Height in cm) conlumn because its relevant to the data.
-   
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-   
+
+
+  | Height Before     | Height After        |                                 
+  ---------------------:|:----------------------
+  ![](Heightbefore.png)| ![](Heightafter.png) 
+  
+  
    To clean the weight column I used the M language using this formula
+   
       ```if Text.Contains([Weight],"kg") then
          Number.From( Text.BeforeDelimiter([Weight],"kg"))*2.205
         else Text.BeforeDelimiter([Weight],"lbs")```
+        
    This transformed the weight column to a standardized format which is the players weight in lbs
    
-  | First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-   
+   | Weight Before  |  Weight After           |                                 
+  ---------------------:|:----------------------
+  ![](Weightbefore.png)| ![](Weightafter.png) 
+  
+  
    ## Value, Wage, and Release clause
    These columns have similar inconsistencies the prefix '€' stands for euros, the suffix 'M' and 'K' represntents million and thousand respectively to standardize the data 
    I removed the '€' suffix from the 3 column, coverted the numbers to dollars  using the following M language formula
@@ -131,20 +133,20 @@ the data is accurate,complete,valid and consistent before the data analysis phas
        ```(if Text.Contains([Release Clause],"M") then
           Number.From ( Text.BeforeDelimiter([Release Clause],"M"))*1000000
           else Number.From (Text.BeforeDelimiter([Release Clause],"K"))*1000)*1.07```
-After this i changed the data type to a currency type.
+After this I changed the data type to a currency type.
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+|Value,Wages & Release clause Before | Value,Wages & Release clause After                |                                 
+  ---------------------:|:----------------------
+  ![](Value&cobefore.png)| ![](Value&coafter.png) 
+
 
  ## IR,SM AND W/F
   These columns had the star symbol (★) which respresents ratings and a text data type I removed the symbol and changed it to a numeric data type
   
- | First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+  |IR,SM AND W/F Before | IR,SM AND W/F After                |                                 
+  ---------------------:|:----------------------
+  ![](Sm&cobefore.png)| ![](Sm&coafter.png) 
+ 
   
   ## Hits
   This column contained data points that had the letter 'K' which represents thousand I used this M language formula to normalise the data and changed the data 
@@ -154,11 +156,9 @@ After this i changed the data type to a currency type.
       Number.From( Text.BeforeDelimiter([Hits],"K"))*1000 else
       Number.From( [Hits])
       
- | First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-     
+  | Hits Before               |  Hits After                |                                 
+  ---------------------:|:----------------------
+  ![](Hitsbefore.png)| ![](Hitsafter.png) 
  
  ## CONCLUSION
  
