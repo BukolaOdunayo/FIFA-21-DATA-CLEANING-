@@ -25,9 +25,9 @@ the data is accurate,complete,valid and consistent before the data analysis phas
   After importing the data to power query editor in excel, I changed the file origin to UTF-8 encoding,this automaticaly removed the special characters and replaced 
   it with the appropriate letter.
   
-  Before                      |   After                                                            :
-  ---------------------------:|:-------------------------------------------------------------------------------
-  ![](Contract&coafter.png)                                         
+   |Before                      | After                           |                                 
+  ---------------------------:|:-------------------------------------
+  ![](Specialcharactersbefore.png)| ![](Specialcharacterafter.png)                                      
   
   
   ## Name,Long_name and ID
@@ -42,10 +42,10 @@ the data is accurate,complete,valid and consistent before the data analysis phas
   The ova(overall analysis rating),POT(potential rating) and BOV(best overall) colunms contained numeric values and had a wrong data type, these columns ideally
   should have a percentage data type and be written in a percentage according to the data dictionary. To transform these colunmns i divided each colunmn by 100 and changed the data type to percentage.
   
- | First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+  |Before                      | After                           |                                 
+  ---------------------------:|:-------------------------------------
+  ![]()| ![]()                                      
+  
 
   ## Contract
   The contract column had a wrong data type and contained data in 3 different formats such as '2020 ~ 2024', 'Aug 31, On Loan','Free' as seen in the image below,these inconsistencies had to be fixed. Observing the data contained in this column I decided to extract more data from the column to provide more information that might be useful in the analysis phase. I created the 'Agreement' and 'Duration' columns using conditinal statements. 
