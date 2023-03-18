@@ -2,9 +2,9 @@
 
 ## Background
 
-I recently participated in a data cleaning challenge organized in the data-tech space, the project was aimed at transforming FIFA 21 messy data into a clean and 
+I recently participated in a data cleaning challenge organized in the data-tech space, the project was aimed at transforming FIFA 2021 messy data into a clean and 
 usable data that is ready for analysis.I transformed the data using M language and other data transformation tool available on Microsoft PoweQuery editor and 
-i will be sharing my process with you in this document.
+I will be sharing my process with you in this document.
 
 ## Data Description
 
@@ -16,14 +16,13 @@ their capabilities and performance updated up till 2021.
 ## Data Cleaning Objective
 
 The object of this data cleaning project is as simple as the goal of every other data cleaning task, which is to improve the data quality by ensuring 
-the data is accurate,complete,valid and consistent before the data analysis phase, and that was exactly what i did.
+the data is accurate,complete,valid and consistent before the data analysis phase, and that was exactly what I did.
 
 ## Data Transformation
- As i have stated earlier i used the Microsoft power query editor to complete the cleaning task, the raw data was messy and it contained a lot of discrepancies,special 
- characters and irrelevant data. To combat the issue i loaded the cvs file to the power query editor and began the transformation process.
+ As I have stated earlier I used the Microsoft power query editor to complete the cleaning task, the raw data was messy and it contained a lot of discrepancies,special characters and irrelevant data. To combat the issue I loaded the cvs file to the power query editor and began the transformation process.
  
  ## Special Characters
-  After importing the data to power query editor in excel,i changed the file origin to UTF-8 encoding,this automaticaly removed the special characters and replaced 
+  After importing the data to power query editor in excel, I changed the file origin to UTF-8 encoding,this automaticaly removed the special characters and replaced 
   it with the appropriate letter.
   (instert picture)
   
