@@ -39,7 +39,7 @@ The objective of this data cleaning project is to improve the data quality by en
   
   ## OVA,POT, AND BOV
   The ova(overall analysis rating),POT(potential rating) and BOV(best overall) columns contained numeric values and had a wrong data type, these columns ideally
-  should have a percentage data type and be written as a percentage value according to the data dictionary. To transform these colunmns I divided each colunmn by 100 and changed the data type to percentage.
+  should have a percentage data type and be written as a percentage value according to the data dictionary. To transform these columns I divided each colunmn by 100 and changed the data type to percentage.
   
   |OVA & POT Before     | OVA & POT After                |                                 
   ---------------------:|:----------------------
@@ -47,7 +47,7 @@ The objective of this data cleaning project is to improve the data quality by en
   
 
   ## Contract
-  The contract column had a wrong data type and contained data in 3 different formats such as '2020 ~ 2024', 'Aug 31, On Loan','Free' as seen in the image below,these inconsistencies had to be fixed. Observing the data contained in this column I decided to extract more data from the column to provide more information that might be useful in the analysis phase. I created the 'Agreement' and 'Contract Duration' columns using conditinal statements. 
+  The contract column had a wrong data type and contained data in 3 different formats such as '2020 ~ 2024', 'Aug 31, On Loan','Free' as seen in the image below,these inconsistencies had to be fixed. Observing the data contained in this column I decided to extract more data from the column to provide more information that might be useful in the analysis phase. I created the 'Agreement' and 'Contract Duration' columns using conditional statements. 
   
   #### Agreement
   To populate this column I created a condidtional statement with 2 clauses and an else statement written as follows
@@ -60,7 +60,7 @@ The objective of this data cleaning project is to improve the data quality by en
   
  The agreement column provides information on the type of agreement players have with their clubs be it contract based, on a loan or free.  
   
- The next line of action was to correct the inconsistencies in the contract column, to fix this I splited the colunm by the delimiter contained in the column '~'
+ The next line of action was to correct the inconsistencies in the contract column, to fix this I splited the column by the delimiter contained in the column '~'
   creating two columns contract 1 and contract 2 which I renamed as 'contract start' and 'contract end' respectively.
   The contract start column contained some errors which I replaced with null because it represents missing values as some players do not have a contract. I then proceeded to create the duration column.
   
@@ -68,14 +68,14 @@ The objective of this data cleaning project is to improve the data quality by en
   To create this column I used a custom column using this formula '[contract end]-[contract start]' the result of this arithemetic operation populates a new column which I named 
   'Contract Duration',it contained some errors which I replaced  with 'null' this is because the errors are as a result of the rows containing 'free and loan date' which can not be subtracted, I then changed data type to the correct format. The contract duration column contains how long a players contract lasted for or should last as the case maybe.
     
-  |Contract Before       | Contract,Agreement & Contract duration After                |                                 
+  |Contract Before       | Contract,Agreement & Contract duration After |                                 
   ----------------------:|:----------------------
   ![](Contractbefore.png)| ![](Contract&coafter.png)  
   
   
   ## Height and Weight
    The height and weight column had a wrong data type and a few discrepancies the height data had two different formats '180cm' and 5'7",
-   in the same vein the weight column had two different categories 100kg and 130lbs these columns had to be normalized for conistency to achieved.
+   in the same vein the weight column had two different categories 100kg and 130lbs these columns had to be normalized for consistency to achieved.
    
    To change the height column into cm I broke the task down into 4 steps
 
@@ -89,7 +89,7 @@ The objective of this data cleaning project is to improve the data quality by en
    after which I created a new column that multiplies [height 1] * [multply by 12] which was the column created in step 1. I named this column multiplication.
    
    
-   Step 4: I changed the null values in height to zero(0) after which I created a new column by creating a custom formula '[height 2] + [multplication]' which 
+   Step 4: I changed the null values in height 2 to zero(0) after which I created a new column by creating a custom formula '[height 2] + [multplication]' which 
    is the column that was created in step 3, I named this column addition. I then proceeded to create a new column with a custom column using this formula 
    '[addition] / [convert to cm]' this column provided the final result which is each players height in (CM). To keep the data clean I deleted the 5 aforementiond columns in the preceeding steps leaving only the (Height in cm) column because its relevant to the data.
 
@@ -114,7 +114,7 @@ The objective of this data cleaning project is to improve the data quality by en
   
    ## Value, Wage, and Release clause
    These columns have similar inconsistencies the prefix '€' stands for euros, the suffix 'M' and 'K' represntents million and thousand respectively to standardize the data 
-   I removed the '€' suffix from the 3 column, coverted the numbers to dollars  using the following M language formula
+   I removed the '€' suffix from the 3 column, coverted the numbers to dollars using the following M language formula
     
    #### Value
       ```(if Text.Contains([Value],"M") then
