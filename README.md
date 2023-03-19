@@ -3,26 +3,26 @@
 ![](FIFA21-LOGO-1080x609.jpg)
 ## Background
 
-I recently participated in a data cleaning challenge organized in the data-tech space, the project was aimed at transforming FIFA 2021 messy data into a clean and 
-usable data that is ready for analysis.I transformed the data using M language and other data transformation tool available on Microsoft Power Query editor and 
+I recently participated in a data cleaning challenge organized in the data-tech space, the project was aimed at transforming FIFA 2021 messy data into clean and 
+usable data that is ready for analysis. I transformed the data using M language and other data transformation tools available on Microsoft Power Query editor and 
 I will be sharing my process with you in this document.
 
 ## Data Description
 
 The raw  FIFA 21 dataset was sourced from [kaggle](https://www.kaggle.com/datasets/yagunnersya/fifa-21-messy-raw-dataset-for-cleaning-exploring),
-the dataset obtained via web scrapping from sofifa.com contains two csv files namely fifa21 raw data v2.csv and fifa21_raw_data.csv the former was 
-used for the sake of this project. The fifa21 raw data v2.csv file contains 18,979 rows and 77 colunms,it contains information about football players,
-their capabilities and performance updated up till 2021.
+the dataset obtained via web scrapping from sofifa.com contains two CSV files namely fifa21 raw data v2.csv and fifa21_raw_data.csv the former was 
+used for the sake of this project. The fifa21 raw data v2.csv file contains 18,979 rows and 77 columns, it contains information about football players,
+their abilities, and performance updated up till 2021.
 
 ## Data Cleaning Objective
 
-The object of this data cleaning project is to improve the data quality by ensuring the data is accurate,complete,valid and consistent before the data analysis phase, and that was exactly what I did.
+The objective of this data cleaning project is to improve the data quality by ensuring the data is accurate, complete, valid, and consistent before the data analysis phase, and that was exactly what I did.
 
 ## Data Transformation
- As I have stated earlier I used the Microsoft power query editor to complete the cleaning task, the raw data was messy and it contained a lot of discrepancies,special characters and irrelevant data. To combat the issue I loaded the cvs file to the power query editor and began the transformation process.
+ As I have stated earlier I used the Microsoft power query editor to complete the cleaning task, the raw data was messy and it contained a lot of discrepancies, special characters, and irrelevant data. To combat the issue I loaded the CVS file to the power query editor and began the transformation process.
  
  ## Special Characters
-  After importing the data to power query editor in excel, I changed the file origin to UTF-8 encoding,this automaticaly removed the special characters and replaced 
+  After importing the data to power query editor in excel, I changed the file origin to UTF-8 encoding,this automatically removed the special characters and replaced 
   it with the appropriate letter.
   
    |Special character Before  | Special character After                           |                                 
@@ -31,14 +31,14 @@ The object of this data cleaning project is to improve the data quality by ensur
   
   
   ## Name,Long_name and ID
-  The dataset does not consist of duplicate data, so the next line of action was to check the data types of each column. Begining with the ID,Name and Long_name 
+  The dataset does not consist of duplicate data, so the next line of action was to check the data types of each column. Beginning with the ID,Name, and Long_name 
   columns respectively, these columns had the right data type and didn't contain inconsistent data so it was left in its original state.
   
   ## Photo_Url and Player_Url
   The photo_Url and player_Url columns contained metadata about the players which includes a link to the players picture and a link to the players website respectively.I decided to delete these columns because they would not be relevant in the analysis phase.
   
   ## OVA,POT, AND BOV
-  The ova(overall analysis rating),POT(potential rating) and BOV(best overall) colunms contained numeric values and had a wrong data type, these columns ideally
+  The ova(overall analysis rating),POT(potential rating) and BOV(best overall) columns contained numeric values and had a wrong data type, these columns ideally
   should have a percentage data type and be written as a percentage value according to the data dictionary. To transform these colunmns I divided each colunmn by 100 and changed the data type to percentage.
   
   |OVA & POT Before     | OVA & POT After                |                                 
@@ -50,7 +50,7 @@ The object of this data cleaning project is to improve the data quality by ensur
   The contract column had a wrong data type and contained data in 3 different formats such as '2020 ~ 2024', 'Aug 31, On Loan','Free' as seen in the image below,these inconsistencies had to be fixed. Observing the data contained in this column I decided to extract more data from the column to provide more information that might be useful in the analysis phase. I created the 'Agreement' and 'Contract Duration' columns using conditinal statements. 
   
   #### Agreement
-  To populate this column i created a condidtional statement with 2 clauses and an else statement written as follows
+  To populate this column I created a condidtional statement with 2 clauses and an else statement written as follows
  
   Clause 1: If (column name)Contract (operator) equals (value)Free (output)Free
   
@@ -160,7 +160,7 @@ After this I changed the data type to the accurate data type.
  
  ## CONCLUSION
  
- The FIFA 2021 raw dataset was very messy, the data cleaning process was daunting intially but it eventually became interesting.The dataset has be normalised and transformed and it is ready for analysis. Joining the data cleaning challenge was a nice learning curve for me, I am looking foward to the data analysis and visualization part of this project.
+ The FIFA 2021 raw dataset was very messy, the data cleaning process was initially daunting but eventually became interesting. The dataset has been normalized and transformed and it is ready for analysis. Joining the data cleaning challenge was a nice learning curve for me, I am looking forward to the data analysis and visualization part of this project.
  Thank you for reading, your feedback and recommendations are highly welcomed. Feel free to connect with me on [Linkedin](www.linkedin.com/in/ogunjimi-bukola) and [Twitter](https://twitter.com/Oluwabukola0).
 
 
